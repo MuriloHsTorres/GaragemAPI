@@ -5,6 +5,7 @@
 package br.dev.torres.garagem.repository;
 
 import br.dev.torres.garagem.entities.Veiculo;
+import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
@@ -13,8 +14,10 @@ import org.springframework.data.jpa.repository.JpaRepository;
  */
 public interface GaragemRepository extends JpaRepository<Veiculo, Long>{
     
+    List<Veiculo> findByCorIgnoreCase(String cor);
     
-    
-    
+    List<Veiculo> findByAno(int ano);
     
 }
+
+   
